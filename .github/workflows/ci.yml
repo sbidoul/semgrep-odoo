@@ -15,4 +15,4 @@ jobs:
       - name: "Install dependencies"
         run: pip install semgrep
       - name: Test semgrep rules
-        run: semgrep --test --test-ignore-todo .
+        run: semgrep --test --test-ignore-todo ./rules
