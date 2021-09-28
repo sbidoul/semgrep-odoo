@@ -1,0 +1,19 @@
+rules:
+  - id: manifest-required-author
+    languages: [python]
+    message: "Missing author in manifest"
+    severity: ERROR
+    #paths:
+    #  include:
+    #    - __manifest__.py
+    patterns:
+      - pattern: |
+          {
+            ...,
+            "authors": $AUTHORS,
+            ...,
+          }
+      - metavariable-pattern:
+          metavariable: $AUTHORS
+          patterns:
+            - pattern-not-regex: .*Odoo Community Association \(OCA\).*

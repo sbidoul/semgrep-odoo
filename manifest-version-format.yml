@@ -1,0 +1,19 @@
+rules:
+  - id: manifest-version-format
+    languages: [python]
+    message: "Invalid version format in manifest"
+    severity: ERROR
+    #paths:
+    #  include:
+    #    - __manifest__.py
+    patterns:
+      - pattern: |
+          {
+            ...,
+            "version": $VERSION,
+            ...,
+          }
+      - metavariable-pattern:
+          metavariable: $VERSION
+          patterns:
+            - pattern-not-regex: 14\.0\.\d+\.\d+\.\d+
