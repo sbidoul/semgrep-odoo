@@ -3,9 +3,9 @@ rules:
     languages: [python]
     message: "Invalid version format in manifest"
     severity: ERROR
-    paths:
-      include:
-        - __manifest__.py
+    #paths:
+    #  include:
+    #    - __manifest__.py
     patterns:
       - pattern: |
           {
